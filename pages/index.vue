@@ -3,6 +3,77 @@
     <MomNav />
     <MomHero />
 
+    <section class="mx-auto w-full max-w-7xl px-4 py-8">
+      <div
+        class="relative overflow-hidden rounded-2xl border border-white/10 bg-[#111111] text-white shadow-xl"
+      >
+        <!-- subtle background texture -->
+        <div
+          class="pointer-events-none absolute inset-0 opacity-20"
+          style="
+            background-image:
+              radial-gradient(circle at 20% 20%, rgba(255,255,255,0.12), transparent 24%),
+              radial-gradient(circle at 80% 30%, rgba(255,255,255,0.08), transparent 28%),
+              linear-gradient(135deg, rgba(255,255,255,0.06), transparent 45%);
+          "
+        ></div>
+
+        <div class="relative grid gap-6 p-6 md:grid-cols-[1.1fr_0.9fr_0.8fr] md:items-center md:p-8">
+          <!-- Left copy -->
+          <div>
+            <!-- <p class="text-2xl font-black uppercase tracking-wide text-white md:text-3xl">
+              Coming Soon
+            </p> -->
+
+            <div class="inline-flex items-center gap-2 rounded-full bg-[#eef3df] px-4 py-2 text-sm font-bold uppercase text-[#59682f] mb-2.5">
+              <span>Coming Soon</span>
+            </div>
+
+            <h2 class="mt-1 text-3xl font-black uppercase leading-tight tracking-wide md:text-4xl">
+              Driveway &<br />
+              Pressure Washing
+            </h2>
+
+            <p class="mt-5 max-w-xl text-base leading-relaxed text-white/80 md:text-lg">
+              We’re expanding! Driveway, patio and exterior pressure washing will be
+              available soon.
+            </p>
+          </div>
+
+          <!-- Middle image card -->
+          <div class="relative min-h-[160px] overflow-hidden rounded-xl border border-white/20 bg-white/5 shadow-inner">
+            <img
+              src="/images/pressure-washing-driveway.jpg"
+              alt="Pressure washing concrete driveway"
+              class="h-full min-h-[160px] w-full object-cover"
+            />
+
+            <!-- dark fade on left -->
+            <div class="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-[#111111] to-transparent"></div>
+          </div>
+
+          <!-- Right CTA -->
+          <div class="md:border-l md:border-white/10 md:pl-6">
+            <p class="text-xl font-black uppercase tracking-wide text-[#6a7a2f] md:text-2xl">
+              Be the first to know
+            </p>
+
+            <p class="mt-4 text-base leading-relaxed text-white/80 md:text-lg">
+              Join the waitlist and we’ll let you know as soon as it’s available.
+            </p>
+
+            <a
+              href="#contact"
+              class="mt-6 inline-flex w-full items-center justify-center gap-3 rounded-lg bg-white px-6 py-4 text-base font-black uppercase tracking-wide text-[#111111] transition hover:bg-[#f2f2f2] md:w-auto"
+            >
+              Join the waitlist
+              <span class="text-2xl leading-none text-[#6a7a2f]">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="services" class="py-16 bg-white">
       <div class="mom-container">
         <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
@@ -176,6 +247,13 @@
 </template>
 
 <script setup lang="ts">
+useSeoMeta({
+  title: 'Exterior Cleaning Services',
+  description: 'Professional exterior cleaning, pressure washing, and property care.',
+  ogTitle: 'MOMA | Exterior Cleaning Services',
+  ogDescription: 'Professional exterior cleaning, pressure washing, and property care.',
+})
+
 const whyItems = [
   {
     icon: '📍',

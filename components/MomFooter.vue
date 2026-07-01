@@ -3,7 +3,7 @@
     <div class="mom-container">
       <div class="grid gap-10 md:grid-cols-4">
         <div>
-          <img src="/images/mom-logo.png" alt="MOM Adelaide" class="h-16 w-auto bg-white p-2 rounded" />
+          <img src="/images/MOMA-logo-dark.svg" alt="MOM Adelaide" class="w-50 p-2 rounded" />
           <p class="mt-4 text-sm text-white/60">
             Metro Outdoor Maintenance. Local driveway, lawn, path and patio refresh services.
           </p>

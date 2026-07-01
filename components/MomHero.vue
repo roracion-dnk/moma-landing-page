@@ -2,9 +2,9 @@
   <section class="relative overflow-hidden bg-white">
     <div class="mom-container grid min-h-[760px] gap-10 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
       <div class="relative z-10">
-        <div class="inline-flex items-center gap-2 rounded-full bg-[#eef3df] px-4 py-2 text-sm font-bold uppercase text-[#59682f]">
+        <!-- <div class="inline-flex items-center gap-2 rounded-full bg-[#eef3df] px-4 py-2 text-sm font-bold uppercase text-[#59682f]">
           <span>Limited Local Offer</span>
-        </div>
+        </div> -->
 
         <h1 class="mt-8 text-6xl font-black uppercase leading-[0.9] tracking-tight sm:text-7xl lg:text-8xl">
           Weekend
