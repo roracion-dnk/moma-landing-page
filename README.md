@@ -30,3 +30,21 @@ cd nuxt3-kitchen-sink
 pnpm i
 pnpm dev
 ```
+
+## Admin OTP
+
+Admin access uses a time-based one-time password from an authenticator app.
+
+Set these environment variables before running or deploying:
+
+```bash
+NUXT_ADMIN_USERNAME=admin
+NUXT_ADMIN_TOTP_SECRET=YOUR_BASE32_AUTHENTICATOR_SECRET
+NUXT_ADMIN_SESSION_SECRET=YOUR_LONG_RANDOM_SESSION_SIGNING_SECRET
+```
+
+Use the same Base32 secret when adding the account to Google Authenticator,
+Microsoft Authenticator, 1Password, Authy, or another TOTP app.
+
+This requires a server-capable Nuxt deployment because the OTP is verified by a
+server route. A fully static `nuxt generate` deployment cannot verify admin OTPs.

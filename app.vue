@@ -6,29 +6,39 @@ useHead({
 const isAuthenticated = ref(false)
 const loginStatus = ref('Checking access...')
 
-const authSessionKey = 'moma-admin-authenticated'
-const adminUsername = 'admin'
-const adminPassword = 'notreadyyetbitch'
-
-onMounted(() => {
-  if (sessionStorage.getItem(authSessionKey) === 'true') {
+onMounted(async () => {
+  try {
+    await $fetch('/api/auth/session')
     isAuthenticated.value = true
     return
+  } catch {
+    loginStatus.value = 'Admin access required.'
   }
 
   const username = window.prompt('Username')
-  const password = window.prompt('Password')
+  const otp = window.prompt('Authenticator code')
 
-  if (username === adminUsername && password === adminPassword) {
-    sessionStorage.setItem(authSessionKey, 'true')
-    isAuthenticated.value = true
-    window.alert('Access granted')
+  if (!username || !otp) {
+    loginStatus.value = 'Access denied. Refresh the page to try again.'
     return
   }
 
-  sessionStorage.removeItem(authSessionKey)
-  loginStatus.value = 'Access denied. Refresh the page to try again.'
-  window.alert('Incorrect username or password')
+  try {
+    await $fetch('/api/auth/otp', {
+      method: 'POST',
+      body: {
+        username,
+        otp,
+      },
+    })
+
+    isAuthenticated.value = true
+    window.alert('Access granted')
+    return
+  } catch {
+    loginStatus.value = 'Access denied. Refresh the page to try again.'
+    window.alert('Incorrect username or authenticator code')
+  }
 })
 </script>
 

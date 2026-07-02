@@ -1,5 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  runtimeConfig: {
+    adminUsername: process.env.NUXT_ADMIN_USERNAME || 'admin',
+    adminTotpSecret: process.env.NUXT_ADMIN_TOTP_SECRET || '',
+    adminSessionSecret: process.env.NUXT_ADMIN_SESSION_SECRET || '',
+  },
   app: {
     head: {
       title: 'MOMA',
